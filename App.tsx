@@ -13,13 +13,14 @@ enableScreens();
 export type RootStackParamList = {
   Tabs: undefined;
   CreateEvent: undefined;
-  Chat: {
+  ChatDetail: {
     chatId: string;
-    chatGroup: {
+    chatGroup?: {
       name: string;
+      participants: any[];
+      messages: any[];
     };
   };
-  ChatDetail: undefined;
 };
 
 type TabParamList = {
@@ -45,7 +46,6 @@ import { ChatDetailScreen } from './screens/ChatDetailScreen.tsx';
 import { CreateEventScreen } from './screens/CreateEventScreen.tsx';
 import { NotificationsScreen } from './screens/NotificationsScreen.tsx';
 import { ExploreScreen } from './screens/ExploreScreen.tsx';
-import { ChatScreen } from './screens/ChatScreen.tsx';
 import { FestaLogo } from './components/FestaLogo.tsx';
 
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -213,26 +213,23 @@ function AppContent() {
           }}
         />
         <Stack.Screen
-          name="Chat"
-          component={ChatScreen}
-          options={({ route }: NativeStackScreenProps<RootStackParamList, 'Chat'>) => ({
-            title: route.params.chatGroup.name || 'Chat',
-            headerBackTitle: 'Back',
-          })}
-        />
-        <Stack.Screen
           name="ChatDetail"
           component={ChatDetailScreen}
-          options={{
-            headerTitle: () => <FestaLogo width={100} height={73} />,
+          options={({ route }: NativeStackScreenProps<RootStackParamList, 'ChatDetail'>) => ({
+            title: 'Chats',
             headerStyle: {
               backgroundColor: colors.background,
-              height: 140,
             },
-            headerTitleContainerStyle: {
-              paddingVertical: 20,
+            headerTitleStyle: {
+              fontFamily: 'Georgia',
+              color: colors.text,
+              fontSize: 20,
             },
-          }}
+            headerTintColor: colors.text,
+            headerBackTitleStyle: {
+              fontFamily: 'Georgia',
+            },
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>

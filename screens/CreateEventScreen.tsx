@@ -205,6 +205,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     alignItems: 'center',
     padding: 16,
+    paddingTop: 32,
   },
   image: {
     width: '100%',

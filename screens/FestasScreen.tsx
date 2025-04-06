@@ -79,7 +79,7 @@ export const FestasScreen = () => {
         messages: [],
       };
       
-      navigation.navigate('Chat', { 
+      navigation.navigate('ChatDetail', { 
         chatId: festaId,
         chatGroup: chatGroup,
       });
@@ -94,7 +94,7 @@ export const FestasScreen = () => {
         messages: [],
       };
       
-      navigation.navigate('Chat', { 
+      navigation.navigate('ChatDetail', { 
         chatId: festaId,
         chatGroup: chatGroup,
       });

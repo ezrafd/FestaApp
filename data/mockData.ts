@@ -2,7 +2,7 @@
 export const mockUsers = [
   {
     id: '1',
-    username: 'johndoe',
+    username: 'johndoe47',
     name: 'John Doe',
     profilePic: 'https://randomuser.me/api/portraits/men/32.jpg',
     bio: 'Software developer and coffee enthusiast',

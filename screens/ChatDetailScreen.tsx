@@ -18,6 +18,11 @@ interface ChatDetailScreenProps {
   route: {
     params: {
       chatId: string;
+      chatGroup?: {
+        name: string;
+        participants: any[];
+        messages: any[];
+      };
     };
   };
 }
@@ -26,10 +31,10 @@ export const ChatDetailScreen = ({ route }: ChatDetailScreenProps) => {
   const { theme } = useTheme();
   const colors = theme === 'dark' ? darkTheme : lightTheme;
   const [message, setMessage] = useState('');
-  const { chatId } = route.params;
+  const { chatId, chatGroup } = route.params;
 
-  // In a real app, this would fetch the chat from the backend
-  const chat = mockChats.find(chat => chat.id === chatId);
+  // Use chatGroup if provided, otherwise find chat from mockChats
+  const chat = chatGroup || mockChats.find(chat => chat.id === chatId);
 
   if (!chat) {
     return (
