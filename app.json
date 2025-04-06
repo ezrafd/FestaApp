@@ -1,28 +1,34 @@
 {
   "expo": {
-    "name": "festaappV2",
+    "name": "Festa",
     "slug": "festaappV2",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/festa-icon.png",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/festa-splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "icon": "./assets/festa-icon.png",
+      "bundleIdentifier": "com.anonymous.festaappV2"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/festa-icon.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.anonymous.festaappV2"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/festa-icon.png"
     }
   }
 }
